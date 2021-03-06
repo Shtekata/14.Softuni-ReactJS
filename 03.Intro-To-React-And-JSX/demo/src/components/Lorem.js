@@ -1,0 +1,2 @@
+const Lorem = () => <p className='left'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia alias illum in sed, veniam magni placeat, dolorum distinctio rem optio atque asperiores accusamus. Quis, numquam sit modi voluptas quos nulla.</p>;
+export default Lorem;
