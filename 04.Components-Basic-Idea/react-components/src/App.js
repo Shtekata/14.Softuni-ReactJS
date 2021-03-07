@@ -4,10 +4,11 @@ import Heading from './components/Heading';
 import Body from './components/Body';
 
 const booksData = [
-    { title: 'Harry Potter', description: 'Wizzards and stuff' },
-    { title: 'Programming with JS', description: 'Guide to programming' },
-    { title: 'The Bible', description: 'Most important book' },
-    { title: 'Chronicles of Narnia', description: 'Adventure' }
+    { title: 'Harry Potter', description: 'Wizzards and stuff', author: 'J.K.Rowling', isSelected: false },
+    { title: 'Programming with JS', description: 'Guide to programming', isSelected: false },
+    { title: 'The Bible', description: 'Most important book', isSelected: false },
+    { title: 'Chronicles of Narnia', description: 'Adventure', isSelected: false },
+    { title: null, description: 'Missing book', isSelected: false }
 ];
 
 function App() {
