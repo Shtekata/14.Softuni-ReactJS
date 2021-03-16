@@ -1,4 +1,8 @@
+import './Button.css';
+
 const Button = (x) => (
-    <button className="counter" onClick={x.clickHandler}>Click me! I'm counter [{x.clicks}]</button>
+    <div className='button'>
+        <button onClick={x.clickHandler}>Click me! I'm counter [{x.clicks}]</button>
+    </div>
 )
 export default Button;

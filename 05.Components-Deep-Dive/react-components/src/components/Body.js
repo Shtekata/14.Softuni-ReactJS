@@ -5,8 +5,13 @@ import Counter from './Counter';
 import Input from './Input';
 
 class Body extends Component{
-    constructor(props) { super(); this.state = { clicks: 0 } }
+    constructor(props) {
+        super();
+        this.state = { clicks: 0 }
+    }
+
     clickHandler = () => this.setState(x => ({ clicks: x.clicks + 1 }))
+
     render() {
         return (
             <main>
@@ -17,7 +22,8 @@ class Body extends Component{
                 <Counter />
                 <br/>
                 <Button clickHandler={() => this.clickHandler()} clicks={this.state.clicks}/>
-                <BookList books={this.props.booksData} />
+                {/* <BookList books={this.props.booksData} /> */}
+                <BookList />
             </main>
         )
     }

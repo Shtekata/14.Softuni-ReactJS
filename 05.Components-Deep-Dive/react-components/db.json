@@ -1,0 +1,35 @@
+{
+    "books": [
+        {
+            "id": 1,
+            "title": "Harry Potter",
+            "description": "Wizzards and stuff",
+            "isSelected": false,
+            "author": "J.K.Rowling"
+        },
+        {
+            "id": 1,
+            "title": "Programming with JS",
+            "description": "Guide to programming",
+            "isSelected": false
+        },
+        {
+            "id": 1,
+            "title": "The Bible",
+            "description": "Most important book",
+            "isSelected": false
+        },
+        {
+            "id": 1,
+            "title": "Chronicles of Narnia",
+            "description": "Adventure",
+            "isSelected": false
+        },
+        {
+            "id": 1,
+            "title": "Ala-Bala",
+            "description": "Missing book",
+            "isSelected": false
+        }
+    ]
+}
