@@ -1,8 +1,8 @@
-import x from './Aside.module.css';
+import x from './Footer.module.css';
 import NavigationItem from '../NavigationItem/NavigationItem';
 
-const Aside = () => (
-    <aside className={x.aside}>
+const Footer = () => (
+    <footer className={x.footer}>
         <ul>
             <NavigationItem>Going to 1</NavigationItem>
             <NavigationItem>Going to 2</NavigationItem>
@@ -15,8 +15,10 @@ const Aside = () => (
             <NavigationItem>Going to 9</NavigationItem>
             <NavigationItem>Going to 10</NavigationItem>
             <NavigationItem>Going to 11</NavigationItem>
+            <NavigationItem><img src="blue-origami-bird-flipped.png" alt="Blue origami" /></NavigationItem>
         </ul>
-    </aside>
+        <p>Software University &copy; 2021</p>
+    </footer>
 );
 
-export default Aside;
+export default Footer;

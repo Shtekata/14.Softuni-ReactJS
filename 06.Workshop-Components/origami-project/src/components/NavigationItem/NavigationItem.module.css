@@ -9,19 +9,21 @@
     border-top: 2px solid #ffa000;
 }
 
-nav .listItem a {
-    color: white;
+nav .listItem a, footer .listItem a, footer p {
     text-decoration: none;
     font-size: 11px;
 }
 
-nav .listItem a img {
+nav .listItem a img, footer .listItem a img {
     width: 100%;
+}
+
+nav .listItem a {
+    color: white;
 }
 
 footer .listItem a {
     color: #234465;
-    text-decoration: none;
 }
 
 nav .listItem, footer .listItem {
@@ -34,9 +36,9 @@ nav .listItem, footer .listItem {
     vertical-align: top;
 }
 
-footer .listItem:nth-child(1) {
+/* footer .listItem:nth-child(1) {
     margin-left: 1%;
-}
+} */
 
 nav .listItem:first-child {
     padding-right: 2%;
@@ -50,10 +52,16 @@ nav .listItem:not(:first-child) {
     width: 4.9%;
 }
 
+footer .listItem:last-child {
+    padding-left: 2%;
+    width: 3%;
+}
+
 footer .listItem:not(:last-child) {
-    padding: 2%;
-    margin-top: 1.5%;
+    padding: 1% 1.7%;
+    margin-top: 0.8%;
     border-bottom: 2px solid #234465;
+    width: 4.9%;
 }
 
 nav .listItem:hover {
