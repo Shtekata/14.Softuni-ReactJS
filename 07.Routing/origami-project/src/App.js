@@ -5,6 +5,10 @@ import Aside from './components/Aside';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import { Route, Link, NavLink, Redirect, Switch } from 'react-router-dom';
+import About from './components/About';
+import ContactUs from './components/ContactUs';
+import y from './components/Main/Main.module.css';
 
 class App extends Component {
 
@@ -32,7 +36,15 @@ class App extends Component {
         <Header />
         <div className={x.conteiner}>
           <Aside onAsideItemClick={this.onAsideItemClickApp.bind(this)} />
-          <Main posts={this.getPosts()} />
+          <Switch>
+            <Route path='/' exact>
+              <Main posts={this.getPosts()} />
+            </Route>
+            <Route path='/about' component={About} />
+            <Route path='/contact-us' component={ContactUs} />
+            <Route path='/contact-us-custom' render={(props)=><h1 className={y.main}>Contact Us Custom Page</h1>} />
+            <Route render={()=><h1 className={y.main}>Error Page =&gt; :)</h1>} />
+          </Switch>
         </div>
         <Footer />
       </div>
