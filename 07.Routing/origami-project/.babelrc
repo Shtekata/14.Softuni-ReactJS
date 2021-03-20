@@ -1,0 +1,9 @@
+{
+  "presets": ["env", "react"],
+  "plugins": [
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    ["styled-jsx/babel", { "plugins": ["styled-jsx-plugin-less"] }],
+    "transform-react-jsx"
+  ]
+}
