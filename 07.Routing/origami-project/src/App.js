@@ -1,12 +1,13 @@
-import { Component } from 'react';
+import { Component, lazy, Suspense } from 'react';
 import * as postService from './services/postService';
 import Aside from './components/Aside';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import { Route, Link, NavLink, Redirect, Switch } from 'react-router-dom';
-import About from './components/About';
 import ContactUs from './components/ContactUs';
+
+const About = lazy(() => import('./components/About'));
 
 class App extends Component {
 
@@ -35,16 +36,20 @@ class App extends Component {
         <Header />
         <div className='container'>
           <Aside onAsideItemClick={this.onAsideItemClickApp.bind(this)} />
-          <Switch>
-            <Route path='/' exact>
-              <Main posts={this.state.posts} />
-            </Route>
-            <Route path='/about' component={About} />
-            <Route path='/contact-us' component={ContactUs} />
-            <Route path='/contact-us-custom' render={(props) => <h1>Contact Us Custom Page</h1>} />
-            <Route path='/aside/:id'><Main posts={this.getPosts()} /></Route>
-            <Route render={()=><h1>Error Page =&gt; :)</h1>} />
-          </Switch>
+
+          <Suspense fallback={<div>Loading...</div>}>
+            <Switch>
+              <Route path='/' exact>
+                <Main posts={this.state.posts} />
+              </Route>
+              <Route path='/about/:name/:age' component={About} />
+              <Route path='/contact-us' component={ContactUs} />
+              <Route path='/contact-us-custom' render={(props) => <h1 {...props}>Contact Us Custom Page</h1>} />
+              <Route path='/aside/:id'><Main posts={this.getPosts()} /></Route>
+              <Route render={({ match, location, history }) => <h1>Error Page =&gt; :)</h1>} />
+            </Switch>
+          </Suspense>
+          
         </div>
         <Footer />
         <style jsx>{`

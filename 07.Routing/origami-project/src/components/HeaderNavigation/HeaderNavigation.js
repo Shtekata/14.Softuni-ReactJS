@@ -1,16 +1,16 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const HeaderNavigation = () => (
   <nav className='navigation'>
     <div className='div'>
-      <Link to='/' className='header-item'><img src="white-origami-bird.png" alt="White origami" /></Link>
-      <Link to='/' className='header-item'>Home</Link>
-      <Link to='/about' className='header-item'>About</Link>
-      <Link to='/contact-us' className='header-item'>Contact Us</Link>
-      <Link to='/contact-us-custom' className='header-item'>Con Us Cus</Link>
-      <Link to='/about' className='header-item'>About</Link>
-      <Link to='/about' className='header-item'>About</Link>
-      <Link to='/about' className='header-item'>About</Link>
+      <NavLink activeStyle={{backgroundColor:'blue'}} exact={true} to='/' className='header-item'><img src="white-origami-bird.png" alt="White origami" /></NavLink>
+      <NavLink activeStyle={{backgroundColor:'blue'}} exact={true} to='/' className='header-item'>Home</NavLink>
+      <NavLink activeStyle={{backgroundColor:'blue'}} exact={true} to='/about' className='header-item'>About</NavLink>
+      <NavLink activeStyle={{backgroundColor:'blue'}} exact={true} to='/contact-us' className='header-item'>Contact Us</NavLink>
+      <NavLink activeStyle={{backgroundColor:'blue'}} exact={true} to='/contact-us-custom' className='header-item'>Con Us Cus</NavLink>
+      <NavLink activeClassName='ala-bala' exact={true} to='/about/Gosho/34' className='header-item'>Gosho</NavLink>
+      <NavLink activeClassName='ala-bala' exact={true} to='/about/Pesho/56' className='header-item'>Pehso</NavLink>
+      <NavLink activeClassName='ala-bala' exact={true} to='/about/Maria/23' className='header-item'>Maria</NavLink>
     </div>
     <style jsx>{`
   .navigation {
@@ -46,6 +46,9 @@ const HeaderNavigation = () => (
     border-top: none;
     border-bottom: 2px solid #ffa000;
     font-weight: bold;
+}
+.ala-bala{
+  background-color: red;
 }
 `}</style>
   </nav>
