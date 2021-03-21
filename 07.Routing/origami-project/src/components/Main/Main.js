@@ -1,12 +1,23 @@
-import x from './Main.module.css';
 import Post from '../Post';
 
 const Main = ({ posts }) => (
-    <main className={x.main}>
+    <main className='main'>
         <h1>Sooooooooome Heading</h1>
-        <div className={x.posts}>
+        <div className='posts'>
             {posts.map(x => <Post key={x.id} post={x} />)}
         </div>
+        <style jsx>{`
+        h1{
+            text-align: center;
+            color: #234465;
+            text-decoration: underline;
+            margin: 1% 0 2% 0;
+        }
+        .main{
+            flex-basis: 83%;
+            height: auto;
+        }
+        `}</style>
     </main>
 );
 

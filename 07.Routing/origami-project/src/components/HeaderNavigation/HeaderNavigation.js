@@ -1,23 +1,53 @@
-import NavigationItem from '../NavigationItem/NavigationItem';
-import x from './HeaderNavigation.module.css';
 import { Link } from 'react-router-dom';
 
 const HeaderNavigation = () => (
-  <nav className={x.navigation}>
-    <ul>
-      <Link to='/'><NavigationItem className={x.listItem}><img src="white-origami-bird.png" alt="White origami" /></NavigationItem></Link>
-      <Link to='/'><NavigationItem className={x.listItem}>Home</NavigationItem></Link>
-      <Link to='/about'><NavigationItem className={x.listItem}>About</NavigationItem></Link>
-      <Link to='/contact-us'><NavigationItem className={x.listItem}>Contact Us</NavigationItem></Link>
-      <Link to='/contact-us-custom'><NavigationItem className={x.listItem}>Contact Us Custom</NavigationItem></Link>
-      <Link to='/about'><NavigationItem className={x.listItem}>About</NavigationItem></Link>
-      <Link to='/about'><NavigationItem className={x.listItem}>About</NavigationItem></Link>
-      <Link to='/about'><NavigationItem className={x.listItem}>About</NavigationItem></Link>
-      <Link to='/about'><NavigationItem className={x.listItem}>About</NavigationItem></Link>
-      <Link to='/about'><NavigationItem className={x.listItem}>About</NavigationItem></Link>
-      <Link to='/about'><NavigationItem className={x.listItem}>About</NavigationItem></Link>
-      <Link to='/about'><NavigationItem className={x.listItem}>About</NavigationItem></Link>
-    </ul>
+  <nav className='navigation'>
+    <div className='div'>
+      <Link to='/' className='header-item'><img src="white-origami-bird.png" alt="White origami" /></Link>
+      <Link to='/' className='header-item'>Home</Link>
+      <Link to='/about' className='header-item'>About</Link>
+      <Link to='/contact-us' className='header-item'>Contact Us</Link>
+      <Link to='/contact-us-custom' className='header-item'>Con Us Cus</Link>
+      <Link to='/about' className='header-item'>About</Link>
+      <Link to='/about' className='header-item'>About</Link>
+      <Link to='/about' className='header-item'>About</Link>
+    </div>
+    <style jsx>{`
+  .navigation {
+      width: 100%;
+      height: 70px;
+      background-color: #234465;
+      border-bottom: 2px solid #ffa000;
+      border-top: 2px solid #ffa000;
+  }
+  .div{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%;
+  }
+  .header-item {
+    color: white;
+    text-align: center;
+  }
+  .header-item > img {
+    width: 100%;
+  }
+  .header-item:first-child {
+    width: 67px;
+  }
+  .header-item:not(:first-child) {
+    padding: 12px 15px;
+    border-top: 2px solid #ffa000;
+    flex-basis: 6%;
+  }
+  .header-item:hover {
+    cursor: pointer;
+    border-top: none;
+    border-bottom: 2px solid #ffa000;
+    font-weight: bold;
+}
+`}</style>
   </nav>
 );
 

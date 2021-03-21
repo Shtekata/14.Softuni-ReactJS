@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import * as postService from './services/postService';
-import x from './App.module.css';
 import Aside from './components/Aside';
 import Header from './components/Header';
 import Main from './components/Main';
@@ -8,12 +7,11 @@ import Footer from './components/Footer';
 import { Route, Link, NavLink, Redirect, Switch } from 'react-router-dom';
 import About from './components/About';
 import ContactUs from './components/ContactUs';
-import y from './components/Main/Main.module.css';
 
 class App extends Component {
 
   constructor(props) {
-    super();
+    super(props);
     this.state = { posts: [], selectedPost: null };
   };
 
@@ -27,26 +25,39 @@ class App extends Component {
 
   getPosts() {
     if (!this.state.selectedPost) return this.state.posts;
-    return [this.state.posts.find(x => x.id == this.state.selectedPost)];
+    return this.state.posts.find(x => x.id == this.state.selectedPost) != undefined
+      ? [this.state.posts.find(x => x.id == this.state.selectedPost)] : this.state.posts;
   }
 
   render() {
     return (
-      <div className={x.app}>
+      <div className='app'>
         <Header />
-        <div className={x.conteiner}>
+        <div className='container'>
           <Aside onAsideItemClick={this.onAsideItemClickApp.bind(this)} />
           <Switch>
             <Route path='/' exact>
-              <Main posts={this.getPosts()} />
+              <Main posts={this.state.posts} />
             </Route>
             <Route path='/about' component={About} />
             <Route path='/contact-us' component={ContactUs} />
-            <Route path='/contact-us-custom' render={(props)=><h1 className={y.main}>Contact Us Custom Page</h1>} />
-            <Route render={()=><h1 className={y.main}>Error Page =&gt; :)</h1>} />
+            <Route path='/contact-us-custom' render={(props) => <h1>Contact Us Custom Page</h1>} />
+            <Route path='/aside/:id'><Main posts={this.getPosts()} /></Route>
+            <Route render={()=><h1>Error Page =&gt; :)</h1>} />
           </Switch>
         </div>
         <Footer />
+        <style jsx>{`
+        .app{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .container{
+          display: flex;
+          justify-content: space-around;
+        }
+        `}</style>
       </div>
     );
   }
