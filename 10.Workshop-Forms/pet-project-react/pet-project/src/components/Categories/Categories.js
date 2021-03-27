@@ -11,7 +11,7 @@ class Categories extends Component {
     }
     componentDidUpdate(prevProps) {
         const category = this.props.match.params.category;
-        if (category == prevProps.match.params.category) return;
+        if (category === prevProps.match.params.category) return;
         petsService.getAll(category)
             .then(x => this.setState({ x }));
     }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const DemoFunc = () => {
+const DemoFunc = (props) => {
 
     const [username, setUsername] = useState('Pesho');
 
@@ -8,6 +8,7 @@ const DemoFunc = () => {
         x.preventDefault();
         console.log(x.target.username.value)
         console.log(x.target.age.value)
+        console.log(props);
     }
     //     const onSubmitClickHandler = (x) => {
     //     console.log(x.target.parentNode.username.value)

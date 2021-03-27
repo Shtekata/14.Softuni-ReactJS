@@ -9,8 +9,7 @@ const options = [
 class Demo extends Component {
     constructor(props){
         super(props);
-        this.
-        state = { 
+        this.state = { 
             username: 'Pesho',
             age: 18, bio: 'Lorem Ipsum',
             occupation: 'engineer',

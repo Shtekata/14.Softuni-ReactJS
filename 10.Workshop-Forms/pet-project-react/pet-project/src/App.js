@@ -6,6 +6,8 @@ import Categories from './components/Categories';
 import PetDetails from './components/PetDetails';
 import Demo from './components/Demo/Demo';
 import DemoFunc from './components/Demo/DemoFunc';
+import CreatePet from './components/CreatePet';
+import EditPetDetails from './components/EditPetDetails';
 
 function App() {
   return (
@@ -14,9 +16,11 @@ function App() {
       <Switch>
         <Route path='/' exact component={Categories} />
         <Route path='/categories/:category' component={Categories} />
-        <Route path='/pets/details/:petId' component={PetDetails} />
+        <Route path='/pets/details/:petId' exact component={PetDetails} />
+        <Route path='/pets/details/:petId/edit' component={EditPetDetails} />
+        <Route path='/pets/create' component={CreatePet}/>
         <Route path='/demo' component={Demo} />
-        <Route path='/demo-func' component={DemoFunc} />
+        <Route path='/demo-func' render={(x) => <DemoFunc {...x} anotherProps='props'/>} />
       </Switch>
       <Footer />
       <style jsx>{`
