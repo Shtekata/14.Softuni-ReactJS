@@ -8,6 +8,7 @@ import Demo from './components/Demo/Demo';
 import DemoFunc from './components/Demo/DemoFunc';
 import CreatePet from './components/CreatePet';
 import EditPetDetails from './components/EditPetDetails';
+import EditPet from './components/EditPet';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
         <Route path='/pets/details/:petId/edit' component={EditPetDetails} />
         <Route path='/pets/create' component={CreatePet}/>
         <Route path='/demo' component={Demo} />
-        <Route path='/demo-func' render={(x) => <DemoFunc {...x} anotherProps='props'/>} />
+        <Route path='/demo-func' render={(x) => <DemoFunc {...x} anotherProps='props' />} />
+        <Route path='/pets/:petId/edit' component={EditPet}/>
       </Switch>
       <Footer />
       <style jsx>{`

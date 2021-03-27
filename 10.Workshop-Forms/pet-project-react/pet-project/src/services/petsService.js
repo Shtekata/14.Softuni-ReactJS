@@ -31,3 +31,14 @@ export const update = (x) => {
     })
         .catch(x => console.log(`Error: ${x}`));
 }
+
+export const pet = (id) => {
+    return getOne(id)
+        .then(x => fetch(`${url}/${id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ likes: x.likes + 1 })
+        }))
+        .then(x => x.json())
+        .catch(x => console.log(x));
+}
