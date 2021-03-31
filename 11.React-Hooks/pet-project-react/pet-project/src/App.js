@@ -9,7 +9,8 @@ import DemoFunc from './components/Demo/DemoFunc';
 import CreatePet from './components/CreatePet';
 import EditPetDetails from './components/EditPetDetails';
 import EditPet from './components/EditPet';
-import Hooks from './components/Hooks';
+import HooksUseState from './components/Hooks/HooksUseState';
+import HooksUseEffect from './components/Hooks/HooksUseEffect/HooksUseEffect';
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
         <Route path='/demo' component={Demo} />
         <Route path='/demo-func' render={(x) => <DemoFunc {...x} anotherProps='props' />} />
         <Route path='/pets/:petId/edit' component={EditPet} />
-        <Route path='/hooks/' component={Hooks} />
+        <Route path='/hooks/useState' component={HooksUseState} />
+        <Route path='/hooks/useEffect/:id' component={HooksUseEffect} />
       </Switch>
       <Footer />
       <style jsx>{`
