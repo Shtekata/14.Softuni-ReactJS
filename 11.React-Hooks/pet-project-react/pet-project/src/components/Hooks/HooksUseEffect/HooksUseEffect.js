@@ -16,9 +16,10 @@ const HooksUseEffect = ({match}) => {
         // fetch(`https://swapi.dev/api/people/${peopleId}`)
         //     .then(x => x.json())
         //     .then(x => { setCharacter(x); console.log(x) });
-        return () => console.log('Component will unmount');
     // }, []);
     }, [peopleId]);
+
+    useEffect(() => { return () => console.log('Component will unmount') }, []);
 
     const changePeopleIdUp = () => { setPeopleId(x => x + 1); console.log(peopleId) };
     const changePeopleIdDown = () => { setPeopleId(x => x - 1); console.log(peopleId) };
