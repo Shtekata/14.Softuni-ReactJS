@@ -14,7 +14,7 @@ const CreatePet = ({ history }) => {
     };
 
     return (
-        <PetFormView onSubmitHandler={onSubmitHandler}/>
+        <PetFormView onSubmitHandler={onSubmitHandler} pet={{}}/>
     )
 };
 export default CreatePet;
