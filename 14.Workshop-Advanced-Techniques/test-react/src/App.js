@@ -1,5 +1,5 @@
-/** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { Button } from "./components/Button";
 
 function App() {
 
@@ -23,6 +23,7 @@ function App() {
       }
       `}>This is another hotpink background.</div>
       <hr />
+      <Button>Click me</Button>
     </>
   );
 }
