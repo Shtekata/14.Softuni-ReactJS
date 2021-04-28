@@ -1,1 +1,1 @@
-export {default} from './Circle'
+export {CircleWithBorder} from './Circle'

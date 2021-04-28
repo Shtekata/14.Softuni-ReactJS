@@ -1,6 +1,6 @@
 import {css, ThemeProvider} from '@emotion/react'
-import {Button} from './components/Button/Button'
-import {CircleWithBorder} from './components/Circle/Circle'
+import {Button} from './components/Button'
+import {CircleWithBorder} from './components/Circle'
 
 function App() {
   const theme = {
